@@ -1,0 +1,86 @@
+/*
+    video style
+ */
+
+.video {
+  padding-bottom: 124px;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+
+    &-clip {
+      width: 555px;
+      box-sizing: border-box;
+
+      figure {
+        position: relative;
+        padding-bottom: 71%;
+        cursor: pointer;
+        margin-top: 53px;
+
+        .video-play {
+          width: 120px;
+          height: 86px;
+          background: url("../img/video/video-play.png") no-repeat center/cover;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          pointer-events: none;
+        }
+      }
+    }
+
+    &-gallery {
+      width: 487px;
+      position: relative;
+
+      .slider {
+
+        &-item {
+
+          figure {
+
+            a {
+
+              img {
+
+              }
+            }
+          }
+        }
+      }
+
+      .counter {
+        margin-top: 30px;
+
+
+        .line {
+          width: 200px;
+        }
+      }
+
+      .nav {
+        position: absolute;
+        bottom: 0;
+        left: 233px;
+      }
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      width: 560px;
+      height: 600px;
+      background: url("../img/leaf.png") no-repeat center/cover;
+      position: absolute;
+      top: 30px;
+      left: -394px;
+      z-index: -1;
+      opacity: 0.8;
+    }
+  }
+}

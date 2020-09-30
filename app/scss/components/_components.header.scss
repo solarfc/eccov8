@@ -12,7 +12,7 @@
     h3 {
       color: #fff;
       text-align: right;
-      margin: 0 12.3% 0 auto;
+      margin: 0 15.5% 0 auto;
     }
 
     >p.large {
@@ -55,6 +55,10 @@
           position: absolute;
           bottom: 10px;
           left: 0;
+
+          @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            color: #fff;
+          }
         }
 
         img {
@@ -141,6 +145,16 @@
 
     .price {
       margin: 85px 0 20px 33.8%;
+
+      span {
+
+        &.old-price {
+
+          &:after {
+            display: none;
+          }
+        }
+      }
     }
 
     .to-order {
@@ -173,16 +187,11 @@
     display: block;
     width: 100%;
     height: 670px;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 26%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 15%);
     background: #b62929;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
-
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      background: url("../img/header/bg.png") no-repeat center/cover;
-    }
-
   }
 }

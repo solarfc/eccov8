@@ -1,0 +1,155 @@
+/*
+    delivery style
+ */
+
+.delivery {
+  padding: 170px 0 96px;
+  position: relative;
+
+  h4 {
+    text-align: center;
+  }
+
+  p.medium {
+    max-width: 750px;
+    text-align: center;
+    margin: 15px auto 60px;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    figure {
+      position: relative;
+      width: 263px;
+
+      p {
+        color: #fff;
+        box-sizing: border-box;
+        width: 235px;
+        padding: 18px 22px 12px 53px;
+        background: #b62929;
+        border-radius: 4px;
+        margin: 10px 0 0 auto;
+        position: relative;
+
+        &:before {
+          display: block;
+          font-family: $rb, sans-serif;
+          font-size: 48px;
+          line-height: 56px;
+          color: #000;
+          position: absolute;
+          top: 50%;
+          left: -28px;
+          transform: translateY(-50%);
+        }
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+      }
+
+      &:first-child {
+
+        &:before {
+          background: url("../img/delivery/1.png") no-repeat center/cover;
+        }
+
+        p {
+
+          &:before {
+            content: "01";
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        margin: 0 28.2% 0 25.6%;
+
+        &:before {
+          background: url("../img/delivery/2.png") no-repeat center/cover;
+        }
+
+        p {
+
+          &:before {
+            content: "02";
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        margin: 0 27.6% 0 26.2%;
+
+        &:before {
+          background: url("../img/delivery/3.png") no-repeat center/cover;
+        }
+
+        p {
+
+          &:before {
+            content: "03";
+          }
+        }
+      }
+
+      &:last-child {
+
+        &:before {
+          background: url("../img/delivery/4.png") no-repeat center/cover;
+        }
+
+        p {
+
+          &:before {
+            content: "04";
+          }
+        }
+      }
+    }
+
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &:before {
+      width: 592px;
+      height: 170px;
+      background: url("../img/delivery/shoes.png") no-repeat center/cover;
+      bottom: -96px;
+      left: -369px;
+    }
+
+    &:after {
+      width: 285px;
+      height: 630px;
+      background: url("../img/girl.png") no-repeat center/cover;
+      position: absolute;
+      top: -337px;
+      right: -105px;
+      z-index: -1;
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 1920px;
+    height: 500px;
+    background: url("../img/lines.png") no-repeat center/cover;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+}

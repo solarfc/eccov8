@@ -1,0 +1,163 @@
+/*
+    spray style
+ */
+
+.spray {
+  padding: 125px 0 155px;
+  position: relative;
+
+  &__content {
+    display: flex;
+
+    &-text {
+      width: 262px;
+      margin-top: 30px;
+
+      p {
+
+        &:nth-child(2) {
+          margin: 51px auto 77px;
+        }
+      }
+
+      .price {
+
+      }
+    }
+
+    &-img {
+      width: 500px;
+      height: 500px;
+      background: #b62929;
+      border-radius: 50%;
+      margin: 0 52px 0 auto;
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 11;
+      }
+
+      span {
+        display: block;
+        font-size: 30px;
+        line-height: 35px;
+        text-align: center;
+        text-transform: uppercase;
+        position: relative;
+        position: absolute;
+        z-index: 9;
+
+        &:before {
+          content: "";
+          display: block;
+          height: calc(100% + 36px);
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: -1;
+        }
+
+        &.left {
+          width: 177px;
+          top: 78px;
+          left: -14px;
+
+          &:before {
+            width: calc(100% + 82px);
+            background: linear-gradient(270deg, #F0F0F0 0%, #B62929 100%);
+            transform: translateY(-50%) scale(-1, 1);
+            left: 0;
+          }
+        }
+
+        &.right {
+          width: 168px;
+          bottom: 78px;
+          right: -18px;
+
+          &:before {
+            width: calc(100% + 91px);
+            background: linear-gradient(270deg, #F0F0F0 0%, #B62929 100%);
+            right: 0;
+          }
+        }
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        width: 468px;
+        height: 486px;
+        background: url("../img/spray/leaf.png") no-repeat center/cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &-order {
+      margin-top: 70px;
+      position: relative;
+
+      ul {
+
+        li {
+
+          p {
+
+          }
+
+          &:nth-child(1) {
+            margin-bottom: 22px;
+          }
+        }
+      }
+
+      form {
+        margin-top: 80px;
+
+        .form-group {
+
+          input {
+            width: 262px;
+            background: #dbdbdb;
+          }
+
+          &.tel {
+            margin: 10px 0 60px;
+          }
+        }
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        width: 414px;
+        height: 640px;
+        background: url("../img/spray/girl.png") no-repeat center/cover;
+        position: absolute;
+        top: -130px;
+        right: -178px;
+        z-index: -1;
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 1920px;
+    height: 500px;
+    background: url("../img/lines.png") no-repeat center/cover;
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+}

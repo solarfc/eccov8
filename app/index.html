@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 viewport-fit=cover">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
+        <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+        <link rel="stylesheet" href="css/slick.css">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -13,8 +15,8 @@
         <header class="header">
             <div class="container">
                 <div class="header__content">
-                    <h3>последняя распродажа</h3>
-                    <p class="large">Женские кеды ECCO изготовлены из мягкой натуральной кожи отборного качества</p>
+                    <h3>тотальный обвал цен</h3>
+                    <p class="large">Будь неотразимой в оригинальной обуви ECCO. Кожаные модели для вашей осени.</p>
                     <div class="header__content-img">
                         <img src="img/header/boot.png" alt="">
                     </div>
@@ -26,13 +28,13 @@
                             <span class="sale">-65% <strong>off</strong></span>
                         </div>
                         <figure>
-                            <span>Всемирный бренд</span>
+                            <span>Натруальная кожа</span>
                         </figure>
                         <figure>
                             <span>Всемирный бренд</span>
                         </figure>
                         <figure>
-                            <span>Всемирный бренд</span>
+                            <span>Быстрая доставка</span>
                         </figure>
                     </div>
                     <div class="price">
@@ -40,8 +42,8 @@
                         <span class="new-price">1 000 грн</span>
                     </div>
                     <div class="to-order">
-                        <a href="">заказать</a>
-                        <p>Акция действует до: <output></output></p>
+                        <a href="" class="shadow">заказать</a>
+                        <p class="period">Акция действует до: <output></output></p>
                     </div>
                 </div>
             </div>
@@ -53,25 +55,41 @@
             <div class="advantages">
                 <div class="container">
                     <div class="advantages__content">
-                        <h5>последняя распродажа</h5>
-                        <p class="medium">Женские кеды ECCO изготовлены из мягкой натуральной кожи отборного качества</p>
+                        <h5>чем хороши кеды soft 7</h5>
+                        <p class="medium">Стильная новинка года из натуральной кожи сочетается с любой одеждой!</p>
                         <div class="advantages__content-img">
                             <img src="img/advantages/boot.png" alt="">
                         </div>
                         <div class="advantages__content-block">
                             <div class="advantages__content-block__circle">
                                 <figure>
-                                    <img src="" alt="">
+                                    <img src="img/advantages/1.jpg" class="shadow" alt="">
+                                    <span>01</span>
                                 </figure>
-                                <figure></figure>
+                                <figure>
+                                    <h6>Долговечность материалов</h6>
+                                    <p class="small">Кожаный верх и полиуретановая подошва – залог вечной красоты обуви</p>
+                                </figure>
                             </div>
                             <div class="advantages__content-block__circle">
-                                <figure></figure>
-                                <figure></figure>
+                                <figure>
+                                    <img src="img/advantages/2.jpg" class="shadow" alt="">
+                                    <span>02</span>
+                                </figure>
+                                <figure>
+                                    <h6>Универсальный стиль casual</h6>
+                                    <p class="small">Воплощение женской современной обуви без лишнего декора</p>
+                                </figure>
                             </div>
                             <div class="advantages__content-block__circle">
-                                <figure></figure>
-                                <figure></figure>
+                                <figure>
+                                    <img src="img/advantages/3.jpg" class="shadow" alt="">
+                                    <span>03</span>
+                                </figure>
+                                <figure>
+                                    <h6>Премиальный комфорт</h6>
+                                    <p class="small">Кеды с анатомической колодкой с первых дней принимают форму стопы</p>
+                                </figure>
                             </div>
                         </div>
                         <div class="to-order">
@@ -81,12 +99,648 @@
                 </div>
             </div>
             <!-- advantages end -->
-            <!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
-            <!--  --><!--  --><!--  --><!--  -->
+            <!-- video start -->
+            <div class="video">
+                <div class="container">
+                    <div class="video__content">
+                        <div class="video__content-clip">
+                            <h3>посмотрите наш видеообзор</h3>
+                            <figure class="shadow">
+                                <img src="img/video/video-bg.jpg" alt="" class="video-media js-show-video" data-video="PisI9l29k4E">
+                                <div class="video-play"></div>
+                            </figure>
+                        </div>
+                        <div class="video__content-gallery">
+                            <div class="slider">
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/video/gallery/1.jpg" data-fancybox="gallery">
+                                            <img src="img/video/gallery/1.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/video/gallery/2.jpg" data-fancybox="gallery">
+                                            <img src="img/video/gallery/2.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/video/gallery/3.jpg" data-fancybox="gallery">
+                                            <img src="img/video/gallery/3.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/video/gallery/4.jpg" data-fancybox="gallery">
+                                            <img src="img/video/gallery/4.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/video/gallery/5.jpg" data-fancybox="gallery">
+                                            <img src="img/video/gallery/5.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/video/gallery/6.jpg" data-fancybox="gallery">
+                                            <img src="img/video/gallery/6.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="counter">
+                                <span class="counterSlide"></span>
+                                <span class="allSlide"></span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="nav">
+                                <div class="gallery-prev prev-arrow"></div>
+                                <div class="gallery-next next-arrow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- video end -->
+            <!-- stock start -->
+            <div class="stock">
+                <div class="container">
+                    <div class="stock__content">
+                        <h3>Акция: <span>вместе дешевле!</span></h3>
+                        <div class="stock__content-img">
+                            <img src="img/stock/boots.png" alt="">
+                        </div>
+                        <p class="sale">1+1 = СКИДКА <span>-200 $</span></p>
+                        <p class="period">Акция действует до: <output></output></p>
+                    </div>
+                </div>
+            </div>
+            <!-- stock end -->
+            <!-- catalog start -->
+            <div class="catalog">
+                <div class="container">
+                    <div class="catalog__block sneakers">
+                        <div class="catalog__block-photo">
+                            <h3>женские кеды ессо soft 7</h3>
+                            <p>Скидка на вторую пару обуви <span>200 грн.</span></p>
+                            <div class="slider">
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sneakers/1.jpg" data-fancybox="sneakers-photo">
+                                            <img src="img/catalog/sneakers/1.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sneakers/2.jpg" data-fancybox="sneakers-photo">
+                                            <img src="img/catalog/sneakers/2.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sneakers/3.jpg" data-fancybox="sneakers-photo">
+                                            <img src="img/catalog/sneakers/3.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sneakers/4.jpg" data-fancybox="sneakers-photo">
+                                            <img src="img/catalog/sneakers/4.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sneakers/5.jpg" data-fancybox="sneakers-photo">
+                                            <img src="img/catalog/sneakers/5.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sneakers/6.jpg" data-fancybox="sneakers-photo">
+                                            <img src="img/catalog/sneakers/6.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="counter">
+                                <span class="counterSlide"></span>
+                                <span class="allSlide"></span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="nav">
+                                <div class="sneakers-prev prev-arrow"></div>
+                                <div class="sneakers-next next-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="catalog__block-img">
+                            <img src="img/catalog/sneakers.png" alt="" class="shoes">
+                            <h5><span>скидка</span>-65% off</h5>
+                            <p class="period">Акция действует до: <output></output></p>
+                        </div>
+                        <div class="catalog__block-info">
+                            <ul>
+                                <li><span>Сезон:</span><span>Осень</span></li>
+                                <li><span>Каблук:</span><span>Ниже 30 мм</span></li>
+                                <li><span>Верх:</span><span>Натуральная кожа</span></li>
+                                <li><span>Подошва:</span><span>Полиуретан</span></li>
+                                <li><span>Страна:</span><span>Словакия</span></li>
+                                <li><span>Стиль</span><span>Ежедневный (casual)</span></li>
+                                <li><span>Цвет:</span><span>Чёрный</span></li>
+                            </ul>
+                            <div class="price">
+                                <span class="old-price">1 000 грн</span>
+                                <span class="new-price">1 000 грн</span>
+                            </div>
+                            <form action="">
+                                <div class="form-group name">
+                                    <input type="text" id="name_first" class="form-control" name="name_first" placeholder="Имя" required>
+                                </div>
+                                <div class="form-group tel">
+                                    <input type="tel" id="phone" class="form-control" name="phone" placeholder="Телефон" required>
+                                </div>
+                                <div class="size">
+                                    <p>Размер:</p>
+                                    <figure>
+                                        <span class="active">36 <strong>24 см</strong></span>
+                                        <span>37 <strong>25 см</strong></span>
+                                        <span>38 <strong>25.5 см</strong></span>
+                                        <span>39 <strong>26 см</strong></span>
+                                        <span>40 <strong>26.5 см</strong></span>
+                                    </figure>
+                                </div>
+                                <div class="form-group order">
+                                    <button type="submit">Заказать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="catalog__block sandals-white">
+                        <div class="catalog__block-photo">
+                            <h3>женские шлепанцы ecco flat</h3>
+                            <p>Скидка на вторую пару обуви <span>200 грн.</span></p>
+                            <div class="slider">
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sandals-white/1.jpg" data-fancybox="sandals-white-photo">
+                                            <img src="img/catalog/sandals-white/1.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sandals-white/2.jpg" data-fancybox="sandals-white-photo">
+                                            <img src="img/catalog/sandals-white/2.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sandals-white/3.jpg" data-fancybox="sandals-white-photo">
+                                            <img src="img/catalog/sandals-white/3.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sandals-white/4.jpg" data-fancybox="sandals-white-photo">
+                                            <img src="img/catalog/sandals-white/4.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sandals-white/5.jpg" data-fancybox="sandals-white-photo">
+                                            <img src="img/catalog/sandals-white/5.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sandals-white/6.jpg" data-fancybox="sandals-white-photo">
+                                            <img src="img/catalog/sandals-white/6.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="counter">
+                                <span class="counterSlide"></span>
+                                <span class="allSlide"></span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="nav">
+                                <div class="sandals-white-prev prev-arrow"></div>
+                                <div class="sandals-white-next next-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="catalog__block-img">
+                            <img src="img/catalog/sandals-white.png" alt="" class="shoes">
+                            <h5><span>скидка</span>-65% off</h5>
+                            <p class="period">Акция действует до: <output></output></p>
+                        </div>
+                        <div class="catalog__block-info">
+                            <ul>
+                                <li><span>Сезон:</span><span>Лето-Осень</span></li>
+                                <li><span>Верх:</span><span>Натуральная кожа</span></li>
+                                <li><span>Подошва:</span><span>Полиуретан</span></li>
+                                <li><span>Стиль</span><span>Ежедневный (casual)</span></li>
+                                <li><span>Страна:</span><span>Словакия</span></li>
+                                <li><span>Цвет:</span><span>Белый</span></li>
+                            </ul>
+                            <div class="price">
+                                <span class="old-price">1 000 грн</span>
+                                <span class="new-price">1 000 грн</span>
+                            </div>
+                            <form action="">
+                                <div class="form-group name">
+                                    <input type="text" id="name_first" class="form-control" name="name_first" placeholder="Имя" required>
+                                </div>
+                                <div class="form-group tel">
+                                    <input type="tel" id="phone" class="form-control" name="phone" placeholder="Телефон" required>
+                                </div>
+                                <div class="size">
+                                    <p>Размер:</p>
+                                    <figure>
+                                        <span class="active">36 <strong>24 см</strong></span>
+                                        <span>37 <strong>24.5 см</strong></span>
+                                        <span>38 <strong>25 см</strong></span>
+                                        <span>39 <strong>25.5 см</strong></span>
+                                        <span>40 <strong>26 см</strong></span>
+                                    </figure>
+                                </div>
+                                <div class="form-group order">
+                                    <button type="submit">Заказать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="catalog__block sandals-black">
+                        <div class="catalog__block-photo">
+                            <h3>женские шлепанцы ecco sandal</h3>
+                            <p>Скидка на вторую пару обуви <span>200 грн.</span></p>
+                            <div class="slider">
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sandals-black/1.jpg" data-fancybox="sandals-black-photo">
+                                            <img src="img/catalog/sandals-black/1.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sandals-black/2.jpg" data-fancybox="sandals-black-photo">
+                                            <img src="img/catalog/sandals-black/2.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sandals-black/3.jpg" data-fancybox="sandals-black-photo">
+                                            <img src="img/catalog/sandals-black/3.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sandals-black/4.jpg" data-fancybox="sandals-black-photo">
+                                            <img src="img/catalog/sandals-black/4.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sandals-black/5.jpg" data-fancybox="sandals-black-photo">
+                                            <img src="img/catalog/sandals-black/5.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/sandals-black/6.jpg" data-fancybox="sandals-black-photo">
+                                            <img src="img/catalog/sandals-black/6.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="counter">
+                                <span class="counterSlide"></span>
+                                <span class="allSlide"></span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="nav">
+                                <div class="sandals-black-prev prev-arrow"></div>
+                                <div class="sandals-black-next next-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="catalog__block-img">
+                            <img src="img/catalog/sandals-black.png" alt="" class="shoes">
+                            <h5><span>скидка</span>-65% off</h5>
+                            <p class="period">Акция действует до: <output></output></p>
+                        </div>
+                        <div class="catalog__block-info">
+                            <ul>
+                                <li><span>Сезон:</span><span>Лето-Осень</span></li>
+                                <li><span>Верх:</span><span>Натуральная кожа</span></li>
+                                <li><span>Подошва:</span><span>Полиуретан</span></li>
+                                <li><span>Стиль</span><span>Ежедневный (casual)</span></li>
+                                <li><span>Страна:</span><span>Словакия</span></li>
+                                <li><span>Цвет:</span><span>Чёрный</span></li>
+                            </ul>
+                            <div class="price">
+                                <span class="old-price">1 000 грн</span>
+                                <span class="new-price">1 000 грн</span>
+                            </div>
+                            <form action="">
+                                <div class="form-group name">
+                                    <input type="text" id="name_first" class="form-control" name="name_first" placeholder="Имя" required>
+                                </div>
+                                <div class="form-group tel">
+                                    <input type="tel" id="phone" class="form-control" name="phone" placeholder="Телефон" required>
+                                </div>
+                                <div class="size">
+                                    <p>Размер:</p>
+                                    <figure>
+                                        <span class="active">36 <strong>24 см</strong></span>
+                                        <span>37 <strong>24.5 см</strong></span>
+                                        <span>38 <strong>25 см</strong></span>
+                                        <span>39 <strong>25.5 см</strong></span>
+                                        <span>40 <strong>26 см</strong></span>
+                                    </figure>
+                                </div>
+                                <div class="form-group order">
+                                    <button type="submit">Заказать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="catalog__block boots">
+                        <div class="catalog__block-photo">
+                            <h3>женские сапоги ecco ukiuk</h3>
+                            <p>Скидка на вторую пару обуви <span>200 грн.</span></p>
+                            <div class="slider">
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/boots/1.jpg" data-fancybox="boots-photo">
+                                            <img src="img/catalog/boots/1.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/boots/2.jpg" data-fancybox="boots-photo">
+                                            <img src="img/catalog/boots/2.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/boots/3.jpg" data-fancybox="boots-photo">
+                                            <img src="img/catalog/boots/3.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/boots/4.jpg" data-fancybox="boots-photo">
+                                            <img src="img/catalog/boots/4.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/boots/5.jpg" data-fancybox="boots-photo">
+                                            <img src="img/catalog/boots/5.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="slider-item">
+                                    <figure>
+                                        <a href="img/catalog/boots/6.jpg" data-fancybox="boots-photo">
+                                            <img src="img/catalog/boots/6.jpg" alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="counter">
+                                <span class="counterSlide"></span>
+                                <span class="allSlide"></span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="nav">
+                                <div class="boots-prev prev-arrow"></div>
+                                <div class="boots-next next-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="catalog__block-img">
+                            <img src="img/catalog/boots.png" alt="" class="shoes">
+                            <h5><span>скидка</span>-65% off</h5>
+                            <p class="period">Акция действует до: <output></output></p>
+                        </div>
+                        <div class="catalog__block-info">
+                            <ul>
+                                <li><span>Сезон:</span><span>Зима</span></li>
+                                <li><span>Каблук:</span><span>Ниже 30 мм</span></li>
+                                <li><span>Верх:</span><span>Замша и кожа</span></li>
+                                <li><span>Подкладка:</span><span>Натуральный мех</span></li>
+                                <li><span>Подошва:</span><span>Полиуретан</span></li>
+                                <li><span>Страна:</span><span>Словакия</span></li>
+                                <li><span>Стиль</span><span>Comfort</span></li>
+                            </ul>
+                            <div class="price">
+                                <span class="old-price">1 000 грн</span>
+                                <span class="new-price">1 000 грн</span>
+                            </div>
+                            <form action="">
+                                <div class="form-group name">
+                                    <input type="text" id="name_first" class="form-control" name="name_first" placeholder="Имя" required>
+                                </div>
+                                <div class="form-group tel">
+                                    <input type="tel" id="phone" class="form-control" name="phone" placeholder="Телефон" required>
+                                </div>
+                                <div class="size">
+                                    <p>Размер:</p>
+                                    <figure>
+                                        <span class="active">36 <strong>24 см</strong></span>
+                                        <span>37 <strong></strong></span>
+                                        <span>38 <strong></strong></span>
+                                        <span>39 <strong></strong></span>
+                                        <span>40 <strong></strong></span>
+                                    </figure>
+                                </div>
+                                <div class="form-group order">
+                                    <button type="submit">Заказать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- catalog end -->
+            <!-- spray start -->
+            <div class="spray">
+                <div class="container">
+                    <div class="spray__content">
+                        <div class="spray__content-text">
+                            <p>Универсальный защитный спрей, кото­рый помогает сохранить обувь и аксе­ссуары ECCO чистыми, сухими и без пятен.</p>
+                            <p>Подходит для обуви из гладкой кожи, замши, нубука и ткани, прошел тестовые испытания на коже и отдело­чных материалах ECCO. Подходит для обуви ECCO с мембраной GORE-TEX.</p>
+                            <div class="price">
+                                <span class="old-price">1 000 грн</span>
+                                <span class="new-price">1 000 грн</span>
+                            </div>
+                        </div>
+                        <div class="spray__content-img">
+                            <img src="img/spray/spray.png" alt="">
+                            <span class="left">защитный спрей</span>
+                            <span class="right">для обуви ecco</span>
+                        </div>
+                        <div class="spray__content-order">
+                            <ul>
+                                <li>
+                                    <p>Объём:  100 мл;</p>
+                                </li>
+                                <li>
+                                    <p>Цвет:  нейтральный.</p>
+                                </li>
+                            </ul>
+                            <form action="">
+                                <div class="form-group name">
+                                    <input type="text" id="name_first" class="form-control" name="name_first" placeholder="Имя" required>
+                                </div>
+                                <div class="form-group tel">
+                                    <input type="tel" id="phone" class="form-control" name="phone" placeholder="Телефон" required>
+                                </div>
+                                <div class="form-group order">
+                                    <button type="submit">Заказать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- spray end -->
+            <!-- review start -->
+            <div class="review">
+                <div class="container">
+                    <h4>что говорят покупатели</h4>
+                    <div class="review__content">
+                        <div class="slider">
+                            <div class="slider-item">
+                                <figure>
+                                    <img src="" alt="">
+                                    <span>Виктория</span>
+                                    <p class="small">Заказала себе эти кеды ЭККО чёрные. Довольна покупкой! Кеды комфортные при ходьбе, качественные и прочные, смотрятся очень красиво и элегантно. Долговечные, удобно сидят на ногах, отлично подходят для повседневного использования, стоят своих денег.</p>
+                                </figure>
+                            </div>
+                            <div class="slider-item">
+                                <figure>
+                                    <img src="" alt="">
+                                    <span>Анна Вишневская</span>
+                                    <p class="small">Заказывала кеды экко в данном магазине.
+                                        <br><br>Ооочень понравились,качество супер. Выглядят как на картинке.
+                                        <br><br>Получила на следующий день после подтверждения заказа. Спасибо Вам за качественный товар и приятное обслуживание.
+                                    </p>
+                                </figure>
+                            </div>
+                            <div class="slider-item">
+                                <figure>
+                                    <img src="" alt="">
+                                    <span>Ольга</span>
+                                    <p class="small">спасибо большое за кеды, они очень крутые !! полное соответствие фото и описанию, быстро связались и быстрая доставка, рекомендую отличный магазин!! большое спасибо.</p>
+                                </figure>
+                            </div>
+                            <div class="slider-item">
+                                <figure>
+                                    <img src="" alt="">
+                                    <span>Ирина</span>
+                                    <p class="small">Я рекомендую этот сайт, хороший магазин, цена за такую обувь сейчас нигде не найдешь. Даже работающий фирменный магазин экко не ставит такие маленькие цены даже в дни распродаж.
+                                        <br><br>Кеды нереально крутейшие, думаю по дополнительной скидке взять к чёрным еще и зимние сапоги. Монотонные и без недостатков.
+                                    </p>
+                                </figure>
+                            </div>
+                            <div class="slider-item">
+                                <figure>
+                                    <img src="" alt="">
+                                    <span>Дина</span>
+                                    <p class="small">Покупкой осталась довольна, отличное качество, эластичные и гибкие, держат форму, плотная подошва, размер в размер, качественная стелька, оригинальная упаковка.</p>
+                                </figure>
+                            </div>
+                            <div class="slider-item">
+                                <figure>
+                                    <img src="" alt="">
+                                    <span>Елена</span>
+                                    <p class="small">Большое спасибо, связались и отправили быстро, кеды ЭККО в чёрном цвете отличного качества, визуально соответствуют фотографиям. Всем рекомендую!</p>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- review end -->
+            <!-- delivery start -->
+            <div class="delivery">
+                <div class="container">
+                    <h4>как мы работаем</h4>
+                    <p class="medium">Доставка осуществляется в течении 2-3х дней. Оплата товара производится на пункте выдачи посылки, после осмотра товара.</p>
+                    <div class="delivery__content">
+                        <figure>
+                            <p class="shadow">Вы оставляете <br>заявку</p>
+                        </figure>
+                        <figure>
+                            <p class="shadow">Мы связываемся <br>с Вами</p>
+                        </figure>
+                        <figure>
+                            <p class="shadow">Отправляем Вашу посылку</p>
+                        </figure>
+                        <figure>
+                            <p class="shadow">Вы оплачиваете <br>её на почте</p>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <!-- delivery end -->
         </main>
         <!-- main end -->
-        <!--  --><!--  -->
+        <!-- footer start -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <h4>обувь по суперценам</h4>
+                    <p class="large">ECCO наполняет ваши осенние прогулки вдохновением и комфортом.</p>
+                    <span>До конца акции осталось:</span>
+                    <div id="timer" class="timer shadow">
+                        <div class="numbers">
+                            <span class="days"></span>
+                            <span class="hours"></span>
+                            <span class="minutes"></span>
+                            <span class="seconds"></span>
+                        </div>
+                    </div>
+                    <div class="footer__content-img">
+
+                    </div>
+                    <div class="price">
+                        <span class="old-price">1 000 грн</span>
+                        <span class="new-price">1 000 грн</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
         <script src="js/jq.js"></script>
+        <script src="js/jquery.fancybox.min.js"></script>
+        <script src="js/video.js"></script>
+        <script src="js/slick.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

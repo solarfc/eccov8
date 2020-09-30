@@ -1,0 +1,74 @@
+/*
+    stock style
+ */
+
+.stock {
+  background: #b62929;
+  padding: 40px 0 43px;
+
+  &__content {
+    position: relative;
+    z-index: 9;
+
+    h3 {
+      max-width: 640px;
+      color: #fff;
+      text-align: center;
+      margin-left: 135px;
+
+      span {
+        display: block;
+        font-family: $r, sans-serif;
+        color: #111;
+      }
+    }
+
+    &-img {
+      max-width: 648px;
+      margin: 45px 0 49px 135px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    p.sale {
+      font-size: 36px;
+      line-height: 42px;
+      color: #fff;
+      margin-left: 273px;
+
+      span {
+        font-family: $rbl, sans-serif;
+      }
+    }
+
+    p.period {
+      margin: 10px 0 0 333px;
+      text-align: left;
+    }
+
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &:before {
+      width: 653px;
+      height: 700px;
+      background: url("../img/leaf.png") no-repeat center/cover;
+      top: -80px;
+      left: -508px;
+    }
+
+    &:after {
+      width: 510px;
+      height: 564px;
+      background: url("../img/stock/gift.png") no-repeat center/cover;
+      top: 20px;
+      right: -121px;
+    }
+  }
+}

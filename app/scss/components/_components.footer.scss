@@ -1,0 +1,114 @@
+/*
+    footer style
+ */
+
+.footer {
+  padding: 125px;
+
+  &__content {
+
+    h4 {
+      width: 555px;
+      text-align: center;
+    }
+
+    p.large {
+      text-align: center;
+      width: 555px;
+      margin: 15px 0 60px;
+    }
+
+    >span {
+      font-size: 20px;
+      line-height: 23px;
+      color: #b62929;
+      text-align: center;
+      text-transform: uppercase;
+      display: block;
+      width: 420px;
+      margin-left: 67px;
+    }
+
+    .timer {
+      box-sizing: border-box;
+      width: 420px;
+      padding: 2px 38px 14px;
+      background: #222;
+      border-radius: 10px;
+      margin: 20px 0 72px 67px;
+
+      .numbers {
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          font-size: 48px;
+          line-height: 72px;
+          color: #fff;
+          box-sizing: border-box;
+          position: relative;
+
+          &:before {
+            display: block;
+            font-family: $r, sans-serif;
+            font-size: 14px;
+            line-height: 21px;
+            color: #fff;
+            position: absolute;
+            bottom: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+
+          &.days {
+
+            &:before {
+              content: "Дней";
+            }
+          }
+
+          &.hours {
+
+            &:before {
+              content: "Часов";
+            }
+          }
+
+          &.minutes {
+
+            &:before {
+              content: "Минут";
+            }
+          }
+
+          &.seconds {
+
+            &:before {
+              content: "Секунд";
+            }
+          }
+        }
+      }
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      margin: 0 0 0 163px;
+
+      span {
+
+        &.old-price {
+
+          &:after {
+            background: #fff;
+          }
+        }
+
+        &.new-price {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
