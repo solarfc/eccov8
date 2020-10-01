@@ -3,42 +3,88 @@
  */
 
 .spray {
-  padding: 125px 0 155px;
+  padding: 85px 0 115px;
   position: relative;
+
+  @include mq(lg) {
+    padding: 60px 0;
+  }
+
+  @include mq(s) {
+    padding-top: 92px;
+  }
 
   &__content {
     display: flex;
 
+    @include mq(lg) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
     &-text {
       width: 262px;
-      margin-top: 30px;
+      margin-top: 70px;
+
+      @include mq(lg) {
+        order: 2;
+        width: 500px;
+        margin-top: 0;
+      }
+
+      @include mq(md) {
+        width: 400px;
+      }
+
+      @include mq(s) {
+        width: 100%;
+      }
 
       p {
 
+        @include mq(xs) {
+          font-size: 16px;
+          line-height: 19px;
+        }
+
         &:nth-child(2) {
           margin: 51px auto 77px;
+
+          @include mq(s) {
+            margin: 20px auto 30px;
+          }
         }
       }
 
       .price {
 
+        @include mq(s) {
+          text-align: center;
+        }
       }
     }
 
     &-img {
       width: 500px;
-      height: 500px;
-      background: #b62929;
-      border-radius: 50%;
       margin: 0 52px 0 auto;
       position: relative;
 
-      img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+      @include mq(lg) {
+        margin: 0 auto 30px;
+      }
+
+      @include mq(xs) {
+        width: 100%;
+      }
+
+      img{
+        position: relative;
         z-index: 11;
+
+        @include mq(xs) {
+          width: 28%;
+
+        }
       }
 
       span {
@@ -50,6 +96,7 @@
         position: relative;
         position: absolute;
         z-index: 9;
+        display: none;
 
         &:before {
           content: "";
@@ -63,7 +110,7 @@
 
         &.left {
           width: 177px;
-          top: 78px;
+          top: 118px;
           left: -14px;
 
           &:before {
@@ -76,7 +123,7 @@
 
         &.right {
           width: 168px;
-          bottom: 78px;
+          bottom: 123px;
           right: -18px;
 
           &:before {
@@ -87,22 +134,58 @@
         }
       }
 
-      &:before {
+      &:before, &:after {
         content: "";
         display: block;
-        width: 468px;
-        height: 486px;
-        background: url("../img/spray/leaf.png") no-repeat center/cover;
         position: absolute;
+      }
+
+      &:before {
+        width: 500px;
+        height: 500px;
+        background: #b62929;
+        border-radius: 50%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        z-index: -1;
+
+        @include mq(xs) {
+          width: 94%;
+          height: 90%;
+        }
+      }
+
+      &:after {
+        width: 468px;
+        height: 486px;
+        background: url("../img/spray/leaf.png") no-repeat center/cover;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include mq(xs) {
+          width: 88%;
+          height: 88%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
     }
 
     &-order {
-      margin-top: 70px;
+      width: 280px;
+      margin-top: 110px;
       position: relative;
+
+      @include mq(lg) {
+        order: 3;
+        margin-top: 0;
+      }
+
+      @include mq(s) {
+        margin-top: 40px;
+      }
 
       ul {
 
@@ -114,12 +197,20 @@
 
           &:nth-child(1) {
             margin-bottom: 22px;
+
+            @include mq(s) {
+              margin-bottom: 15px;
+            }
           }
         }
       }
 
       form {
         margin-top: 80px;
+
+        @include mq(s) {
+          margin-top: 30px;
+        }
 
         .form-group {
 
@@ -135,6 +226,7 @@
       }
 
       &:before {
+        /* скрыть на md */
         content: "";
         display: block;
         width: 414px;
@@ -144,6 +236,10 @@
         top: -130px;
         right: -178px;
         z-index: -1;
+
+        @include mq(md) {
+          display: none;
+        }
       }
     }
   }
@@ -156,8 +252,14 @@
     background: url("../img/lines.png") no-repeat center/cover;
     position: absolute;
     top: 180px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 50%;
+    transform: translateX(50%);
     z-index: -1;
+
+    @include mq(md) {
+      top: 30px;
+      right: 0;
+      transform: none;
+    }
   }
 }

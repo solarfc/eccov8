@@ -5,21 +5,58 @@
 .video {
   padding-bottom: 124px;
 
+  @include mq(lg) {
+    padding-bottom: 60px;
+  }
+
   &__content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     position: relative;
 
+    @include mq(md) {
+      display: block;
+    }
+
     &-clip {
       width: 555px;
       box-sizing: border-box;
+
+      @include mq(lg) {
+        width: 450px;
+      }
+
+      @include mq(md) {
+        width: 555px;
+        margin: 0 auto;
+      }
+
+      @include mq(xs) {
+        width: 100%;
+      }
+
+      h3 {
+
+        @include mq(md) {
+          text-align: center;
+        }
+
+        @include mq(xs) {
+          font-size: 30px;
+          line-height: 35px;
+        }
+      }
 
       figure {
         position: relative;
         padding-bottom: 71%;
         cursor: pointer;
         margin-top: 53px;
+
+        @include mq(xs) {
+          margin-top: 20px;
+        }
 
         .video-play {
           width: 120px;
@@ -30,6 +67,11 @@
           left: 50%;
           transform: translate(-50%, -50%);
           pointer-events: none;
+
+          @include mq(xs) {
+            width: 63px;
+            height: 45px;
+          }
         }
       }
     }
@@ -37,6 +79,14 @@
     &-gallery {
       width: 487px;
       position: relative;
+
+      @include mq(md) {
+        margin: 40px auto 0;
+      }
+
+      @include mq(xs) {
+        width: calc(100% - 60px);
+      }
 
       .slider {
 
@@ -57,9 +107,16 @@
       .counter {
         margin-top: 30px;
 
+        @include mq(xs) {
+          margin-top: 20px;
+        }
 
         .line {
           width: 200px;
+
+          @include mq(xs) {
+            width: 154px;
+          }
         }
       }
 
@@ -67,10 +124,15 @@
         position: absolute;
         bottom: 0;
         left: 233px;
+
+        @include mq(xs) {
+          left: 180px;
+        }
       }
     }
 
     &:before {
+      /* скрыть на lg */
       content: "";
       display: block;
       width: 560px;
@@ -81,6 +143,10 @@
       left: -394px;
       z-index: -1;
       opacity: 0.8;
+
+      @include mq(lg) {
+        display: none;
+      }
     }
   }
 }

@@ -7,15 +7,58 @@
   margin-top: 80px;
   padding: 30px 0 48px;
 
+  @include mq(md) {
+    margin-top: 40px;
+  }
+
   &__block {
     display: flex;
     align-items: flex-start;
 
+    @include mq(lg) {
+      justify-content: space-between;
+    }
+
+    @include mq(md) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
     &-photo {
       width: 324px;
 
+      @include mq(lg) {
+        width: 300px;
+        position: relative;
+        z-index: 20;
+      }
+
+      @include mq(md) {
+        width: 550px;
+        margin: 0 auto 47px;
+      }
+
+      @include mq(s) {
+        width: 100%;
+        max-width: 550px;
+      }
+
+      @include mq(xs) {
+        margin-bottom: 27px;
+      }
+
       h3 {
         color: #fff;
+
+        @include mq(md) {
+          text-align: center;
+        }
+
+        @include mq(xs) {
+          font-size: 30px;
+          line-height: 35px;
+          text-align: left;
+        }
       }
 
       p {
@@ -30,6 +73,15 @@
         background: #b62929;
         border-radius: 5px;
         margin: 8px auto 36px;
+
+        @include mq(md) {
+          max-width: 324px;
+        }
+
+        @include mq(xs) {
+          font-size: 14px;
+          line-height: 16px;
+        }
 
         span {
           font-family: $rb, sans-serif;
@@ -118,11 +170,29 @@
       position: relative;
       margin: 0 20px 0 auto;
 
+      @include mq(lg) {
+        width: 340px;
+        margin: 0;
+      }
+
+      @include mq(md) {
+        width: 375px;
+      }
+
+      @include mq(xs) {
+        width: 100%;
+      }
+
       img {
         position: absolute;
         top: -12px;
         left: -164px;
         z-index: 11;
+
+        @include mq(xs) {
+          position: relative;
+          transform: translateX(-50%);
+        }
       }
 
       h5 {
@@ -133,6 +203,20 @@
         top: 252px;
         left: -118px;
         z-index: 11;
+
+        @include mq(lg) {
+          font-size: 30px;
+          line-height: 35px;
+          top: 195px;
+          left: -10px;
+        }
+
+        @include mq(xs) {
+          font-size: 22px;
+          line-height: 33px;
+          top: 37%;
+          left: 10px;
+        }
 
         span {
           display: block;
@@ -147,6 +231,10 @@
         line-height: 27px;
         color: #f06e10;
         margin: 157px auto 0;
+
+        @include mq(xs) {
+          margin: -10px auto 0;
+        }
 
         output {
           display: block;
@@ -164,6 +252,26 @@
         width: 375px;
         height: 380px;
         background: url("../img/catalog/line.png") no-repeat center/cover;
+
+        @include mq(lg) {
+          width: 340px;
+          height: 345px;
+        }
+
+        @include mq(md) {
+          width: 375px;
+          height: 380px;
+        }
+
+        @include mq(xs) {
+          width: 78%;
+          min-width: 228px;
+          height: 41%;
+          min-height: 231px;
+          position: absolute;
+          top: 20px;
+          right: -15px;
+        }
       }
 
       &:after {
@@ -173,11 +281,27 @@
         position: absolute;
         top: -30px;
         right: 10px;
+
+        @include mq(lg) {
+          width: 202px;
+          height: 501px;
+        }
+
+        @include mq(xs) {
+          width: 138px;
+          height: 340px;
+          top: -12px;
+          right: -9px;
+        }
       }
     }
 
     &-info {
       width: 280px;
+
+      @include mq(xs) {
+        margin-top: 40px;
+      }
 
       ul {
 
@@ -283,6 +407,7 @@
                 position: absolute;
                 bottom: -55px;
                 left: 50%;
+                opacity: 0;
                 transform: translateX(-50%);
                 transition: inherit;
               }
@@ -301,17 +426,27 @@
       }
     }
 
-    &.sandals-black {
+    &.sneakers {
 
       .catalog__block-img {
 
         img {
-          top: -31px;
-          left: -150px;
-        }
 
-        h5 {
-          top: 232px;
+          @include mq(lg) {
+            width: 430px;
+            top: 0;
+            left: -72px;
+          }
+
+          @include mq(md) {
+            left: -50px;
+          }
+
+          @include mq(xs) {
+            width: 110%;
+            top: 0;
+            left: 50%;
+          }
         }
       }
     }
@@ -319,15 +454,80 @@
     &.sandals-white {
       margin: 131px auto;
 
+      @include mq(md) {
+        margin: 60px auto;
+      }
+
       .catalog__block-img {
 
         img {
           top: -30px;
           left: -170px;
+
+          @include mq(lg) {
+            width: 430px;
+            left: -50px;
+          }
+
+          @include mq(md) {
+            left: -28px;
+          }
+
+          @include mq(xs) {
+            width: 110%;
+            top: 0;
+            left: 50%;
+          }
         }
 
         h5 {
           top: 232px;
+
+          @include mq(lg) {
+            top: 150px;
+          }
+
+          @include mq(xs) {
+            top: 34%;
+          }
+        }
+      }
+    }
+
+    &.sandals-black {
+
+      .catalog__block-img {
+
+        img {
+          top: -31px;
+          left: -150px;
+
+          @include mq(lg) {
+            width: 430px;
+            left: -50px;
+          }
+
+          @include mq(md) {
+            left: -28px;
+          }
+
+          @include mq(xs) {
+            width: 110%;
+            top: 0;
+            left: 50%;
+          }
+        }
+
+        h5 {
+          top: 232px;
+
+          @include mq(lg) {
+            top: 140px;
+          }
+
+          @include mq(xs) {
+            top: 34%;
+          }
         }
       }
     }
@@ -335,14 +535,44 @@
     &.boots {
       margin-top: 131px;
 
+      @include mq(md) {
+        margin-top: 60px;
+      }
+
       .catalog__block-img {
 
         img {
           left: -114px;
+
+          @include mq(lg) {
+            width: 410px;
+            top: -10px;
+            left: -50px;
+          }
+
+          @include mq(md) {
+            left: -28px;
+          }
+
+          @include mq(xs) {
+            width: 110%;
+            top: 0;
+            left: 50%;
+          }
         }
 
         h5 {
           top: 292px;
+
+          @include mq(lg) {
+            top: 235px;
+            left: 0;
+          }
+
+          @include mq(xs) {
+            top: 47%;
+            left: 10px;
+          }
         }
       }
     }

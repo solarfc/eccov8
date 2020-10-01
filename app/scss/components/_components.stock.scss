@@ -6,6 +6,10 @@
   background: #b62929;
   padding: 40px 0 43px;
 
+  @include mq(md) {
+    padding: 29px 0 38px;
+  }
+
   &__content {
     position: relative;
     z-index: 9;
@@ -15,6 +19,15 @@
       color: #fff;
       text-align: center;
       margin-left: 135px;
+
+      @include mq(lg) {
+        margin: 0 auto;
+      }
+
+      @include mq(xs) {
+        font-size: 30px;
+        line-height: 35px;
+      }
 
       span {
         display: block;
@@ -27,6 +40,17 @@
       max-width: 648px;
       margin: 45px 0 49px 135px;
 
+      @include mq(lg) {
+        margin: 45px auto 49px;
+      }
+
+      @include mq(xs) {
+        position: relative;
+        width: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
       img {
         width: 100%;
       }
@@ -38,14 +62,28 @@
       color: #fff;
       margin-left: 273px;
 
+      @include mq(lg) {
+        margin: 0 auto;
+        text-align: center;
+      }
+
       span {
         font-family: $rbl, sans-serif;
+
+        @include mq(xs) {
+          display: block;
+        }
       }
     }
 
     p.period {
       margin: 10px 0 0 333px;
       text-align: left;
+
+      @include mq(lg) {
+        margin: 10px auto 0;
+        text-align: center;
+      }
     }
 
     &:before, &:after {
@@ -56,11 +94,16 @@
     }
 
     &:before {
+      /* скрыть на lg */
       width: 653px;
       height: 700px;
       background: url("../img/leaf.png") no-repeat center/cover;
       top: -80px;
       left: -508px;
+
+      @include mq(lg) {
+        display: none;
+      }
     }
 
     &:after {
@@ -69,6 +112,25 @@
       background: url("../img/stock/gift.png") no-repeat center/cover;
       top: 20px;
       right: -121px;
+
+      @include mq(lg) {
+        width: 653px;
+        height: 700px;
+        background: url("../img/leaf.png") no-repeat center/cover;
+        top: -80px;
+        right: -300px;
+      }
+
+      @include mq(md) {
+        right: -420px;
+      }
+
+      @include mq(s) {
+        width: 340px;
+        height: 365px;
+        top: -39px;
+        right: -266px;
+      }
     }
   }
 }

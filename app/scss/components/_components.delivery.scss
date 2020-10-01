@@ -6,6 +6,14 @@
   padding: 170px 0 96px;
   position: relative;
 
+  @include mq(lg) {
+    padding: 120px 0 75px;
+  }
+
+  @include mq(md) {
+    padding: 60px 0;
+  }
+
   h4 {
     text-align: center;
   }
@@ -14,6 +22,12 @@
     max-width: 750px;
     text-align: center;
     margin: 15px auto 60px;
+
+    @include mq(xs) {
+      font-size: 16px;
+      line-height: 19px;
+      margin: 20px auto 30px;
+    }
   }
 
   &__content {
@@ -21,9 +35,17 @@
     flex-wrap: wrap;
     position: relative;
 
+    @include mq(md) {
+      justify-content: space-around;
+    }
+
     figure {
       position: relative;
       width: 263px;
+
+      @include mq(xs) {
+        margin-bottom: 20px;
+      }
 
       p {
         color: #fff;
@@ -73,6 +95,18 @@
       &:nth-child(2) {
         margin: 0 28.2% 0 25.6%;
 
+        @include mq(lg) {
+          margin: 0 24% 0 21%;
+        }
+
+        @include mq(md) {
+          margin: 0;
+        }
+
+        @include mq(xs) {
+          margin-bottom: 20px;
+        }
+
         &:before {
           background: url("../img/delivery/2.png") no-repeat center/cover;
         }
@@ -88,6 +122,18 @@
       &:nth-child(3) {
         margin: 0 27.6% 0 26.2%;
 
+        @include mq(lg) {
+          margin: 0 23% 0 22%;
+        }
+
+        @include mq(md) {
+          margin: 0;
+        }
+
+        @include mq(xs) {
+          margin-bottom: 20px;
+        }
+
         &:before {
           background: url("../img/delivery/3.png") no-repeat center/cover;
         }
@@ -101,6 +147,10 @@
       }
 
       &:last-child {
+
+        @include mq(xs) {
+          margin-bottom: 0;
+        }
 
         &:before {
           background: url("../img/delivery/4.png") no-repeat center/cover;
@@ -122,14 +172,24 @@
     }
 
     &:before {
+      /* скрыть на md */
       width: 592px;
       height: 170px;
       background: url("../img/delivery/shoes.png") no-repeat center/cover;
       bottom: -96px;
       left: -369px;
+
+      @include mq(lg) {
+        left: -390px;
+      }
+
+      @include mq(md) {
+        display: none;
+      }
     }
 
     &:after {
+      /* скрыть на md */
       width: 285px;
       height: 630px;
       background: url("../img/girl.png") no-repeat center/cover;
@@ -137,6 +197,10 @@
       top: -337px;
       right: -105px;
       z-index: -1;
+
+      @include mq(md) {
+        display: none;
+      }
     }
   }
 
@@ -148,8 +212,17 @@
     background: url("../img/lines.png") no-repeat center/cover;
     position: absolute;
     top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 50%;
+    transform: translateX(50%);
     z-index: -1;
+
+    @include mq(md) {
+      right: 0;
+      transform: none;
+    }
+
+    @include mq(xs) {
+      top: 226px;
+    }
   }
 }

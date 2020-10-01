@@ -5,6 +5,36 @@ console.log(`width ${myWidth} \n height ${myHeight}`);
 window.onload = function () {
 
     /*
+        date increase
+     */
+
+    let today = new Date(),
+        tomorrow = new Date(),
+        day,
+        month,
+        year,
+        i = 3,
+        period = document.querySelectorAll('p.period output');
+
+    tomorrow.setDate(today.getDate() + i);
+
+    day = tomorrow.getDate();
+    month = tomorrow.getMonth() + 1;
+    year = tomorrow.getFullYear().toString().slice(2);
+
+    day = (day > 9) ? day : `0${day}`;
+    month = (month > 9) ? month : `0${month}`;
+
+    for(let i = 0; i < period.length; i++) {
+        period[i].innerHTML = `${day}.${month}.${year}`;
+    }
+
+    /*
+        slow scroll
+     */
+
+
+    /*
         loop fancybox
      */
 
@@ -61,6 +91,15 @@ window.onload = function () {
         prevArrow: $('.gallery-prev'),
         nextArrow: $('.gallery-next'),
         swipe: false,
+        responsive: [
+            {
+                breakpoint: 577,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
     gallerySlider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
@@ -153,6 +192,20 @@ window.onload = function () {
     sandalsBlackSlider.slick(sliderSettings, sliderSettings.prevArrow = $('.sandals-black-prev'), sliderSettings.nextArrow = $('.sandals-black-next'));
     sandalsWhiteSlider.slick(sliderSettings, sliderSettings.prevArrow = $('.sandals-white-prev'), sliderSettings.nextArrow = $('.sandals-white-next'));
 
+    /*
+        change active size
+     */
+
+    let allSize = document.querySelectorAll('.size figure span');
+
+    for(let i = 0; i < allSize.length; i++) {
+        for(let j = 0; j < allSize.length; j++) {
+            allSize[j].addEventListener('click', function () {
+                allSize[i].classList.remove('active');
+                allSize[j].classList.add('active');
+            });
+        }
+    }
 
     /*
         review slider
@@ -164,38 +217,51 @@ window.onload = function () {
     reviewSlider.on('init', function (slick, event) {
         reviewCenter = $('.slick-center');
 
-        reviewCenter.prev().find('.slider-item').css({
+        reviewCenter.prev().find('.slider-items').css({
             marginLeft: 0
         });
 
-        reviewCenter.find('.slider-item').css({
+        reviewCenter.find('.slider-items').css({
             marginLeft: 'auto'
         });
     });
 
-
     reviewSlider.slick({
         slidesToShow: 2,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         centerMode: true,
         centerPadding: 0,
-        arrows: false
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    adaptiveHeight: true,
+                    arrows: true,
+                    prevArrow: $('.review-prev'),
+                    nextArrow: $('.review-next')
+                }
+            }
+        ]
     });
 
-    gallerySlider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    reviewSlider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         if ((currentSlide > nextSlide && (nextSlide !== 0 || currentSlide === 1)) || (currentSlide === 0 && nextSlide === slick.slideCount - 1)) {
-            galleryCenter = $('.slick-center').prev();
+            reviewCenter = $('.slick-center').prev();
         } else if (currentSlide === nextSlide) {
-            galleryCenter = $('.slick-center');
+            reviewCenter = $('.slick-center');
         } else {
-            galleryCenter = $('.slick-center').next();
+            reviewCenter = $('.slick-center').next();
         }
 
-        reviewCenter.prev().find('.slider-item').css({
+        reviewCenter.prev().find('.slider-items').css({
             marginLeft: 0
         });
 
-        reviewCenter.find('.slider-item').css({
+        reviewCenter.find('.slider-items').css({
             marginLeft: 'auto'
         });
     });
@@ -238,13 +304,122 @@ window.onload = function () {
 
     myTimer();
 
-    // /*
-    //     change href on mobile
-    //  */
+    /*
+        animate
+     */
+
+    let fade = [
+        $('.bucket'), $('.advantages__content h5'), $('.advantages__content p.medium'),
+        $('.advantages__content-img'), $('.advantages__content-block__circle'), $('.advantages__content .to-order'),
+        $('.video__content-clip h3'), $('.video__content-clip figure'), $('.video__content-gallery'),
+        $('.stock__content h3'), $('.stock__content-img'), $('.stock__content p'),
+        $('.catalog__block-photo'), $('.catalog__block-img'), $('.catalog__block-info'),
+        $('.spray__content-text p'), $('.spray__content-text .price'), $('.spray__content-img'), $('.spray__content-order'),
+        $('.review h4'), $('.review__content'),
+        $('.delivery h4'), $('.delivery p.medium'), $('.delivery__content figure')
+    ];
+
+    for(let i = 0; i < fade.length; i++) {
+        fade[i].waypoint(
+            function (direction) {
+                if(direction === 'down') {
+                    $(this.element).addClass('animated');
+                    this.destroy();
+                }
+            },
+            {
+                offset: function () {
+                    return this.context.innerHeight() * 0.82;
+                }
+            }
+        );
+    }
+
+    /*
+        slow scroll
+     */
+
+    // let $root = $('html, body'),
+    //     href;
     //
-    // if(/iPhone|iPod|Android/i.test(navigator.userAgent)){
-    //     document.querySelector('a.grande').href = '#formgrande';
-    //     document.querySelector('a.lake').href = '#formlake';
-    //     document.querySelector('a.lou').href = '#formlou';
-    // }
+    // $('.to-order a, a.bucket').on('click', function () {
+    //     href = $(this).attr('href');
+    //     $root.animate({scrollTop: $(href).offset().top}, 800, function () {
+    //         window.location.hash = href;
+    //     });
+    //     return false;
+    // });
+
+    let $root = $('html, body'),
+        scrollLink = $('.to-order a, a.bucket'),
+        scroll = (a, b, c) => {
+          a.on('click', function () {
+            let d = $(this).attr('href');
+            b.animate({scrollTop: $(d).offset().top - c}, 800, function () {
+                window.location.hash = d;
+            });
+            return false;
+          });
+        };
+
+    scroll(scrollLink, $root, myHeight);
+
+
+    /*
+        change href on mobile
+     */
+
+    if(/iPhone|iPod|Android/i.test(navigator.userAgent)) {
+        $('.to-order a, a.bucket').attr('href', '#mobile-order');
+        scroll(scrollLink, $root, myHeight);
+        // let mobileOrderPosition = document.querySelector('#mobile-order').offsetTop;
+        // let a = mobileOrderPosition - myHeight;
+        // console.log(a);
+        // let $root = $('html, body');
+        //
+        // $('.to-order a, a.bucket').on('click', function () {
+        //     $root.animate({scrollTop: a}, 800, function () {
+        //         window.location.hash = href;
+        //     });
+        //     return false;
+        // });
+
+
+        window.addEventListener('scroll', function () {
+            let topOfWindow = window.pageYOffset + myHeight,
+                catalogPosition = document.querySelector('.catalog').offsetTop,
+                sprayPosition = document.querySelector('.spray').offsetTop,
+                footerPosition = document.querySelector('.footer').offsetTop,
+                footerLinkPosition = document.querySelector('.footer__content .to-order.last').offsetTop,
+                bucket = document.querySelector('.bucket');
+
+            if (topOfWindow > catalogPosition && topOfWindow < sprayPosition) {
+                bucket.classList.remove('animated');
+            } else if (topOfWindow > footerPosition + footerLinkPosition) {
+                bucket.classList.remove('animated');
+            } else {
+                bucket.classList.add('animated');
+            }
+        });
+
+        window.addEventListener('resize', function () {
+            myHeight = innerHeight;
+            console.log(myHeight);
+
+            let topOfWindow = window.pageYOffset + myHeight,
+                catalogPosition = document.querySelector('.catalog').offsetTop,
+                sprayPosition = document.querySelector('.spray').offsetTop,
+                footerPosition = document.querySelector('.footer').offsetTop,
+                footerLinkPosition = document.querySelector('.footer__content .to-order.last').offsetTop,
+                bucket = document.querySelector('.bucket');
+
+            if (topOfWindow > catalogPosition && topOfWindow < sprayPosition) {
+                bucket.classList.remove('animated');
+            } else if (topOfWindow > footerPosition + footerLinkPosition) {
+                bucket.classList.remove('animated');
+            } else {
+                bucket.classList.add('animated');
+            }
+        });
+    }
 };

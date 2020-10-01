@@ -3,19 +3,43 @@
  */
 
 .footer {
-  padding: 125px;
+  padding: 125px 0 15px;
+  position: relative;
+
+  @include mq(md) {
+    padding-top: 0;
+  }
 
   &__content {
+    position: relative;
 
     h4 {
       width: 555px;
       text-align: center;
+
+      @include mq(md) {
+        margin: 0 auto;
+      }
+
+      @include mq(s) {
+        width: 100%;
+        max-width: 555px;
+      }
     }
 
     p.large {
       text-align: center;
       width: 555px;
       margin: 15px 0 60px;
+
+      @include mq(md) {
+        margin: 20px auto 40px;
+      }
+
+      @include mq(s) {
+        width: 100%;
+        max-width: 555px;
+      }
     }
 
     >span {
@@ -27,6 +51,16 @@
       display: block;
       width: 420px;
       margin-left: 67px;
+
+      @include mq(md) {
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      @include mq(xs) {
+        font-size: 14px;
+        line-height: 16px;
+      }
     }
 
     .timer {
@@ -36,6 +70,16 @@
       background: #222;
       border-radius: 10px;
       margin: 20px 0 72px 67px;
+
+      @include mq(md) {
+        margin: 14px auto 25px;
+      }
+
+      @include mq(xs) {
+        width: 100%;
+        max-width: 290px;
+        padding: 2px 26px 9px;
+      }
 
       .numbers {
         display: flex;
@@ -48,6 +92,11 @@
           box-sizing: border-box;
           position: relative;
 
+          @include mq(xs) {
+            font-size: 34px;
+            line-height: 50px;
+          }
+
           &:before {
             display: block;
             font-family: $r, sans-serif;
@@ -58,6 +107,28 @@
             bottom: -9px;
             left: 50%;
             transform: translateX(-50%);
+
+            @include mq(xs) {
+              font-size: 10px;
+              line-height: 15px;
+              bottom: -5px;
+            }
+          }
+
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 2px;
+            height: 88px;
+            background: #575757;
+            top: -2px;
+            right: -20px;
+
+            @include mq(xs) {
+              height: 61px;
+              right: -13.5px;
+            }
           }
 
           &.days {
@@ -86,7 +157,71 @@
             &:before {
               content: "Секунд";
             }
+
+            &:after {
+              display: none;
+            }
           }
+        }
+      }
+    }
+
+    &-img {
+      position: relative;
+      position: absolute;
+      top: -19px;
+      right: -100px;
+
+      @include mq(lg) {
+        right: 50px;
+      }
+
+      @include mq(md) {
+        max-width: 328px;
+        position: relative;
+        top: 0;
+        right: -15px;
+        margin: 0 auto;
+      }
+
+      @include mq(xs) {
+        right: 0;
+      }
+
+      img {
+        position: relative;
+
+        @include mq(xs) {
+          width: 100%;
+        }
+      }
+
+      span.sale {
+        top: 400px;
+        left: -476px;
+
+        @include mq(lg) {
+          left: -75px;
+        }
+
+        @include mq(md) {
+          left: 0;
+        }
+      }
+
+      &:before {
+        /* скрыть на lg */
+        content: "";
+        display: block;
+        width: 525px;
+        height: 630px;
+        background: url("../img/footer/girls.png") no-repeat center/cover;
+        position: absolute;
+        top: -21px;
+        left: -430px;
+
+        @include mq(lg) {
+          display: none;
         }
       }
     }
@@ -94,7 +229,12 @@
     .price {
       display: flex;
       align-items: center;
-      margin: 0 0 0 163px;
+      margin-left: 163px;
+
+      @include mq(md) {
+        margin: 0 auto;
+        justify-content: center;
+      }
 
       span {
 
@@ -109,6 +249,95 @@
           color: #fff;
         }
       }
+    }
+
+    .to-order {
+      margin: 20px 0 57px 137px;
+
+      @include mq(md) {
+        margin: 20px auto 30px;
+      }
+    }
+
+    p.address {
+      font-size: 14px;
+      line-height: 21px;
+      color: #000;
+      text-align: center;
+
+      br {
+        display: none;
+
+        @include mq(lg) {
+          display: block;
+        }
+
+        @include mq(xs) {
+          display: none;
+        }
+      }
+
+      a {
+        display: inline-block;
+        color: inherit;
+      }
+    }
+
+    &:before, &:after {
+      content: "";
+      display: block;
+      width: 653px;
+      height: 700px;
+      background: url("../img/leaf.png") no-repeat center/cover;
+      position: absolute;
+      top: -125px;
+      z-index: -1;
+    }
+
+    &:before {
+      /* скрыть на lg */
+      left: -681px;
+
+      @include mq(xl) {
+        left: -581px;
+      }
+
+      @include mq(lg) {
+        display: none;
+      }
+    }
+
+    &:after {
+      right: -361px;
+
+      @include mq(md) {
+        top: calc(100% - 970px);
+      }
+
+      @include mq(s) {
+        width: 400px;
+        height: 430px;
+        top: calc(100% - 700px);
+        right: -175px;
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 615px;
+    background: #b62929;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 15%);
+    transform: scale(1, -1);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    @include mq(lg) {
+      width: 1290px;
     }
   }
 }
