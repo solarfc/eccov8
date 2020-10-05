@@ -39,6 +39,8 @@
       text-align: center;
       max-width: 640px;
       margin: 16px 12.3% 50px auto;
+      position: relative;
+      z-index: 11;
 
       @include mq(lg) {
         max-width: 540px;
@@ -48,12 +50,11 @@
 
       @include mq(md) {
         margin: 10px auto 0;
-        position: relative;
-        z-index: 11;
       }
     }
 
     &-img {
+      position: relative;
       position: absolute;
       top: 151px;
       right: -180px;
@@ -63,7 +64,9 @@
       }
 
       @include mq(lg) {
-        position: static;
+        position: relative;
+        top: 0;
+        right: 0;
         max-width: 659px;
         margin-left: auto;
       }
@@ -74,7 +77,6 @@
 
       @include mq(xs) {
         width: 110%;
-        position: relative;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
@@ -92,6 +94,21 @@
 
         @include mq(s) {
           right: 0;
+        }
+      }
+
+      span.sale {
+        bottom: 55px;
+        right: 185px;
+        z-index: 12;
+
+        @include mq(md) {
+          bottom: 50px;
+          right: 130px;
+        }
+
+        @include mq(s) {
+          display: none;
         }
       }
     }
@@ -127,17 +144,18 @@
         top: 60px;
         left: 0;
 
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          top: 12px;
+        }
+
         @include mq(md) {
+          width: 235px;
           position: relative;
           top: 0;
           left: 0;
         }
 
-        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-          top: 12px;
-        }
-
-        @include mq(xs) {
+        @include mq(s) {
           width: 115px;
         }
 
@@ -182,25 +200,10 @@
         }
 
         span.sale {
-          top: 385px;
-          right: -866px;
-
-          @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-            top: 437px;
-          }
-
-          @include mq(lg) {
-            top: 355px;
-            left: 610px;
-          }
-
-          @include mq(md) {
-            top: 220px;
-            left: 430px;
-            z-index: 12;
-          }
+          display: none;
 
           @include mq(s) {
+            display: block;
             color: #b62929;
             top: -20px;
             left: calc(100% + 42px);
@@ -282,16 +285,6 @@
       @include mq(lg) {
         margin: 60px auto 20px;
         text-align: center;
-      }
-
-      span {
-
-        &.old-price {
-
-          &:after {
-            display: none;
-          }
-        }
       }
     }
 

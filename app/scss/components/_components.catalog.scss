@@ -99,10 +99,6 @@
             a {
               position: relative;
 
-              img {
-
-              }
-
               &:before, &:after {
                 content: "";
                 display: block;
@@ -314,10 +310,6 @@
             line-height: 24px;
             color: #fff;
 
-            &:first-child {
-
-            }
-
             &:last-child {
               font-family: $r, sans-serif;
               opacity: .8;
@@ -357,10 +349,6 @@
 
         .form-group {
 
-          &.name {
-
-          }
-
           &.tel {
             margin: 10px auto 15px;
           }
@@ -396,6 +384,7 @@
               cursor: pointer;
               transition: all 0.55s ease-in-out;
               position: relative;
+              z-index: 20;
 
               strong {
                 font-family: $r, sans-serif;
@@ -403,9 +392,9 @@
                 line-height: 21px;
                 text-align: left;
                 writing-mode: tb-rl;
-                height: 50px;
+                height: 55px;
                 position: absolute;
-                bottom: -55px;
+                bottom: -60px;
                 left: 50%;
                 opacity: 0;
                 transform: translateX(-50%);

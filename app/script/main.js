@@ -2,7 +2,11 @@ let myWidth = window.innerWidth,
     myHeight = window.innerHeight;
 console.log(`width ${myWidth} \n height ${myHeight}`);
 
+document.querySelector('html').style.overflowY = 'hidden';
+
 window.onload = function () {
+    document.querySelector('.loader').style.display = 'none';
+    document.querySelector('html').style.overflowY = 'scroll';
 
     /*
         date increase
@@ -28,11 +32,6 @@ window.onload = function () {
     for(let i = 0; i < period.length; i++) {
         period[i].innerHTML = `${day}.${month}.${year}`;
     }
-
-    /*
-        slow scroll
-     */
-
 
     /*
         loop fancybox
@@ -152,7 +151,15 @@ window.onload = function () {
         swipe: false,
         arrows: true,
         prevArrow: '',
-        nextArrow: ''
+        nextArrow: '',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    swipe: true
+                }
+            }
+        ]
     };
 
     sneakersSlider.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
@@ -336,90 +343,59 @@ window.onload = function () {
     }
 
     /*
-        slow scroll
+        hide bucket on mobile
      */
 
-    // let $root = $('html, body'),
-    //     href;
-    //
-    // $('.to-order a, a.bucket').on('click', function () {
-    //     href = $(this).attr('href');
-    //     $root.animate({scrollTop: $(href).offset().top}, 800, function () {
-    //         window.location.hash = href;
-    //     });
-    //     return false;
-    // });
+    const hideBucket = () => {
+        let topOfWindow = window.pageYOffset + myHeight,
+            catalogTopPosition = document.querySelector('.catalog').offsetTop,
+            sprayTopPosition = document.querySelector('.spray').offsetTop,
+            footerTopPosition = document.querySelector('.footer').offsetTop,
+            footerLinkTopPosition = document.querySelector('.to-order.last').offsetTop,
+            bucket = document.querySelector('.bucket');
 
-    let $root = $('html, body'),
-        scrollLink = $('.to-order a, a.bucket'),
-        scroll = (a, b, c) => {
-          a.on('click', function () {
-            let d = $(this).attr('href');
-            b.animate({scrollTop: $(d).offset().top - c}, 800, function () {
-                window.location.hash = d;
-            });
-            return false;
-          });
-        };
-
-    scroll(scrollLink, $root, myHeight);
-
+        if(topOfWindow > catalogTopPosition && topOfWindow < sprayTopPosition) {
+            bucket.classList.remove('animated');
+            bucket.style.display = 'none';
+        } else if(topOfWindow > footerTopPosition + footerLinkTopPosition) {
+            bucket.classList.remove('animated');
+            bucket.style.display = 'none';
+        } else {
+            bucket.classList.add('animated');
+            bucket.style.display = 'block';
+        }
+    };
 
     /*
         change href on mobile
      */
 
-    if(/iPhone|iPod|Android/i.test(navigator.userAgent)) {
-        $('.to-order a, a.bucket').attr('href', '#mobile-order');
-        scroll(scrollLink, $root, myHeight);
-        // let mobileOrderPosition = document.querySelector('#mobile-order').offsetTop;
-        // let a = mobileOrderPosition - myHeight;
-        // console.log(a);
-        // let $root = $('html, body');
-        //
-        // $('.to-order a, a.bucket').on('click', function () {
-        //     $root.animate({scrollTop: a}, 800, function () {
-        //         window.location.hash = href;
-        //     });
-        //     return false;
-        // });
+    if(/iPhone|iPod|iPad|Android/i.test(navigator.userAgent)) {
+        myHeight = window.innerHeight;
 
+        let href = $('#mobile-order').offset().top - myHeight - 40;
 
-        window.addEventListener('scroll', function () {
-            let topOfWindow = window.pageYOffset + myHeight,
-                catalogPosition = document.querySelector('.catalog').offsetTop,
-                sprayPosition = document.querySelector('.spray').offsetTop,
-                footerPosition = document.querySelector('.footer').offsetTop,
-                footerLinkPosition = document.querySelector('.footer__content .to-order.last').offsetTop,
-                bucket = document.querySelector('.bucket');
+        $('.to-order a, a.bucket').on('click', function () {
 
-            if (topOfWindow > catalogPosition && topOfWindow < sprayPosition) {
-                bucket.classList.remove('animated');
-            } else if (topOfWindow > footerPosition + footerLinkPosition) {
-                bucket.classList.remove('animated');
-            } else {
-                bucket.classList.add('animated');
-            }
+            $('html, body').animate({scrollTop: href}, 800);
+            return false;
         });
 
+        window.addEventListener('scroll', function () {
+            hideBucket();
+        }, false);
+
         window.addEventListener('resize', function () {
-            myHeight = innerHeight;
-            console.log(myHeight);
+            myHeight = window.innerHeight;
+            hideBucket();
+        }, false);
+    } else {
+        let href = $('#catalog').offset().top;
 
-            let topOfWindow = window.pageYOffset + myHeight,
-                catalogPosition = document.querySelector('.catalog').offsetTop,
-                sprayPosition = document.querySelector('.spray').offsetTop,
-                footerPosition = document.querySelector('.footer').offsetTop,
-                footerLinkPosition = document.querySelector('.footer__content .to-order.last').offsetTop,
-                bucket = document.querySelector('.bucket');
+        $('.to-order a, a.bucket').on('click', function () {
 
-            if (topOfWindow > catalogPosition && topOfWindow < sprayPosition) {
-                bucket.classList.remove('animated');
-            } else if (topOfWindow > footerPosition + footerLinkPosition) {
-                bucket.classList.remove('animated');
-            } else {
-                bucket.classList.add('animated');
-            }
+            $('html, body').animate({scrollTop: href}, 800);
+            return false;
         });
     }
 };

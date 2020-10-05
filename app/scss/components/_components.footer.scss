@@ -264,6 +264,8 @@
       line-height: 21px;
       color: #000;
       text-align: center;
+      position: relative;
+      z-index: 11;
 
       br {
         display: none;
